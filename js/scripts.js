@@ -11,7 +11,7 @@ function paidgroup() {
   this.bitcoin = 500;
   this.days = 0;
   this.characters = [];
-  this.bitcoins = 0;
+  this.ethereum = 0;
   this.distance = 0;
   this.airdropped = 0;
   this.completed = 0.01;
@@ -281,7 +281,7 @@ function buildLandmarkModal(value, btnID1, btnID2, btn1Name, btn2Name) {
 
 paidgroup.prototype.buildScore = function() {
   var finalScore = 10000;
-  finalScore -= ((this.days - 50) * 20) + ((5 - this.characters.length) * 2000) - (this.tendies * .2) - (this.bitcoin * .3) - (this.bitcoins* .1)
+  finalScore -= ((this.days - 50) * 20) + ((5 - this.characters.length) * 2000) - (this.tendies * .2) - (this.bitcoin * .3) - (this.ethereum* .1)
   return finalScore.toFixed();
 
 }
@@ -430,9 +430,9 @@ paidgroup.prototype.airdropTime = function() {
     buildModal(num);
     $(".ongoing-events").prepend("You have already claimed this airdrop. You must find another scam.<br>");
     $("#myModal").toggle();
-  } else if (this.airdropped == 0 && paidgroup.bitcoins > 0){
+  } else if (this.airdropped == 0 && paidgroup.ethereum > 0){
     this.tendies += airdrop
-    this.bitcoins -= 1
+    this.ethereum -= 1
     paidgroup.statusAdjuster()
     this.airdropped += 1;
     $(".ongoing-events").prepend("You got " + airdrop + " pounds of tendies.<br>")
@@ -445,10 +445,10 @@ paidgroup.prototype.airdropTime = function() {
     $("#myModal").toggle();
   }
 
-  if (paidgroup.bitcoins <= 0) {
-    paidgroup.bitcoins = 0
+  if (paidgroup.ethereum <= 0) {
+    paidgroup.ethereum = 0
   }
-  $('#paidgroup-bitcoins-remaining').text(paidgroup.bitcoins);
+  $('#paidgroup-ethereum-remaining').text(paidgroup.ethereum);
 }
 //Profession checker
 paidgroup.prototype.profession = function(input) {
@@ -469,23 +469,23 @@ paidgroup.prototype.profession = function(input) {
   }
 }
 
-function exchangeSubTotal(tendies, bitcoins) {
-  var total = (tendies * 0.2) + (bitcoins * 0.1);
+function exchangeSubTotal(tendies, ethereum) {
+  var total = (tendies * 0.2) + (ethereum * 0.1);
   $('.tendies-total').text((tendies * 0.2).toFixed(2));
-  $('.bitcoin-total').text((bitcoins * 0.1).toFixed(2));
+  $('.bitcoin-total').text((ethereum * 0.1).toFixed(2));
   return total.toFixed(2);
 }
 
-function exchangeBuy(tendies, bitcoins) {
-    var total = ((tendies * 0.2) + (bitcoins * 0.1)).toFixed(2);
+function exchangeBuy(tendies, ethereum) {
+    var total = ((tendies * 0.2) + (ethereum * 0.1)).toFixed(2);
 
-    if (total == NaN || isNaN(total) || paidgroup.bitcoin < total || tendies < 0 || bitcoins < 0) {
+    if (total == NaN || isNaN(total) || paidgroup.bitcoin < total || tendies < 0 || ethereum < 0) {
       $("#exchange").effect("shake", {times:3}, 700);
     }
     else {
       paidgroup.bitcoin -= total;
       paidgroup.tendies += tendies;
-      paidgroup.bitcoins += bitcoins;
+      paidgroup.ethereum += ethereum;
       $("#exchange").fadeOut(500);
       $("#gameMainScreen").delay(500).fadeIn(500);
       $('.paidgroup-bitcoin-remaining').text(paidgroup.bitcoin.toFixed(2));
@@ -513,7 +513,7 @@ function textUpdateUI() {
   $('#player-five-illness').text(char5.illness.length);
   $('#paidgroup-tendies-remaining').text(paidgroup.tendies.toFixed(0));
   $('.paidgroup-bitcoin-remaining').text(paidgroup.bitcoin.toFixed(2));
-  $('#paidgroup-bitcoins-remaining').text(paidgroup.bitcoins.toFixed(0));
+  $('#paidgroup-ethereum-remaining').text(paidgroup.ethereum.toFixed(0));
   $('.current-date').text(paidgroup.days);
   $('.distance-traveled').text(paidgroup.distance);
 }
@@ -577,17 +577,17 @@ $(document).ready(function(){
 
   $("#subtotal").click(function(){
     var buytendies = parseInt($("#tendies-fields input").val())
-    var buybitcoins = parseInt($("#bitcoin-fields input").val())
-    $(".exchange-total").text("$ " + exchangeSubTotal(buytendies, buybitcoins))
+    var buyethereum = parseInt($("#ethereum-fields input").val())
+    $(".exchange-total").text("$ " + exchangeSubTotal(buytendies, buyethereum))
   });
 
   $("#exchangeBTN").click(function(){
     var buytendies = parseInt($("#tendies-fields input").val())
-    var buybitcoins = parseInt($("#bitcoin-fields input").val())
-    exchangeBuy(buytendies, buybitcoins)
+    var buyethereum = parseInt($("#ethereum-fields input").val())
+    exchangeBuy(buytendies, buyethereum)
     $('#paidgroup-tendies-remaining').text(paidgroup.tendies);
     $('.paidgroup-bitcoin-remaining').text(paidgroup.bitcoin.toFixed(2));
-    $('#paidgroup-bitcoins-remaining').text(paidgroup.bitcoins);
+    $('#paidgroup-ethereum-remaining').text(paidgroup.ethereum);
     document.getElementById('openingSong').pause();
   });
 
