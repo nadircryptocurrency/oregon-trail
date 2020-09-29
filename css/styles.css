@@ -20,18 +20,18 @@ span {
 #gameMainScreen {
   display: none;
 }
-#paidgroup-6,
-#paidgroup-5,
-#paidgroup-4,
-#paidgroup-3,
-#paidgroup-2 {
+#wagon-6,
+#wagon-5,
+#wagon-4,
+#wagon-3,
+#wagon-2 {
   display: none;
   margin-top: 36px;
   position: absolute;
   z-index: 1;
 }
 
-#paidgroup-1 {
+#wagon-1 {
   position: absolute;
   margin-top: 36px;
   z-index: 1;
@@ -72,7 +72,7 @@ span {
   margin-left: 15px;
 }
 
-#paidgroup-images .col-md-2 {
+#wagon-images .col-md-2 {
   padding: 0px 5px;
 }
 
@@ -119,7 +119,7 @@ span {
   float: right;
 }
 
-#paidgroup-images {
+#wagon-images {
   background-image: url(../img/mountains.png);
   background-size: cover;
   background-position: bottom;
@@ -173,17 +173,17 @@ span {
   100%   {left:5%; bottom:50%; transform:rotate(0deg); background-image: url(../img/beans.png);}
 }
 
-.icon-paidgroup {
+.icon-wagon {
   width: 120px;
   height: 103px;
   position: absolute;
   bottom: 24%;
   left: 5%;
-  background-image: url(../img/paidgroup.png);
+  background-image: url(../img/wagon.png);
   background-size: cover;
-  animation: paidgroupwheel 40s linear 0s infinite reverse;
-  -moz-animation: 40s linear 0s reverse none infinite paidgroupwheel;
-  -webkit-animation: paidgroupwheel 40s linear 0s infinite reverse;
+  animation: wagonwheel 40s linear 0s infinite reverse;
+  -moz-animation: 40s linear 0s reverse none infinite wagonwheel;
+  -webkit-animation: wagonwheel 40s linear 0s infinite reverse;
 }
 
 #start {
@@ -196,14 +196,14 @@ span {
 }
 
 /* Safari 4.0 - 8.0 */
-@-webkit-keyframes paidgroupwheel {
+@-webkit-keyframes wagonwheel {
   0%   {left:5%;}
   50% {left:85%;}
   100% {left:5%;}
 }
 
 /* Standard syntax */
-@keyframes paidgroupwheel {
+@keyframes wagonwheel {
   0%   {left:5%;}
   50% {left:85%;}
   100% {left:5%;}
