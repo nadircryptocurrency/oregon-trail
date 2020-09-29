@@ -18,7 +18,7 @@ function paidgroup() {
 }
 
 Character.prototype.positivityBar = function() {
-  var pairs = {Sky-high ROI: "#28a745", Even-Steven: "#f0ad4e", Fukt: "#d9534f", Rekt: "black"};
+  var pairs = {Good: "#28a745", Fair: "#f0ad4e", Poor: "#d9534f", Dead: "black"};
     $( "#char1-positivity-bar").progressbar({value: char1.positivity});
     $( "#char1-positivity-bar .ui-widget-header").css("background", pairs[char1.status]).css("border-color", pairs[char1.status]);
     $( "#char2-positivity-bar").progressbar({value: char2.positivity});
