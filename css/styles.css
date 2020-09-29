@@ -359,7 +359,7 @@ img {
 }
 
 #tendies-fields .col-md-3,
-#bitcoin-fields .col-md-3 {
+#ethereum-fields .col-md-3 {
   border: 1px solid black;
   text-align: right;
   line-height: 41px;
@@ -368,7 +368,7 @@ img {
 }
 
 #tendies-fields .col-md-3:first-of-type,
-#bitcoin-fields .col-md-3:first-of-type {
+#ethereum-fields .col-md-3:first-of-type {
   padding: 0px;
 }
 
