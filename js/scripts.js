@@ -1,123 +1,123 @@
 // character constructor
 function Character(name) {
   this.name = name;
-  this.health = 100;
-  this.status = "Good"
+  this.positivity = 100;
+  this.status = "Sky-high ROI"
   this.illness = []
 }
-// wagon/inventory constructor
-function Wagon() {
-  this.food = 0;
-  this.money = 500;
+// paidgroup/inventory constructor
+function paidgroup() {
+  this.tendies = 0;
+  this.bitcoin = 500;
   this.days = 0;
   this.characters = [];
-  this.bullets = 0;
+  this.bitcoins = 0;
   this.distance = 0;
-  this.hunted = 0;
+  this.airdropped = 0;
   this.completed = 0.01;
 }
 
-Character.prototype.healthBar = function() {
-  var pairs = {Good: "#28a745", Fair: "#f0ad4e", Poor: "#d9534f", Dead: "black"};
-    $( "#char1-health-bar").progressbar({value: char1.health});
-    $( "#char1-health-bar .ui-widget-header").css("background", pairs[char1.status]).css("border-color", pairs[char1.status]);
-    $( "#char2-health-bar").progressbar({value: char2.health});
-    $( "#char2-health-bar .ui-widget-header").css("background", pairs[char2.status]).css("border-color", pairs[char2.status]);
-    $( "#char3-health-bar").progressbar({value: char3.health});
-    $( "#char3-health-bar .ui-widget-header").css("background", pairs[char3.status]).css("border-color", pairs[char3.status]);
-    $( "#char4-health-bar").progressbar({value: char4.health});
-    $( "#char4-health-bar .ui-widget-header").css("background", pairs[char4.status]).css("border-color", pairs[char4.status]);
-    $( "#char5-health-bar").progressbar({value: char5.health});
-    $( "#char5-health-bar .ui-widget-header").css("background", pairs[char5.status]).css("border-color", pairs[char5.status]);
+Character.prototype.positivityBar = function() {
+  var pairs = {Sky-high ROI: "#28a745", Even-Steven: "#f0ad4e", Fukt: "#d9534f", Rekt: "black"};
+    $( "#char1-positivity-bar").progressbar({value: char1.positivity});
+    $( "#char1-positivity-bar .ui-widget-header").css("background", pairs[char1.status]).css("border-color", pairs[char1.status]);
+    $( "#char2-positivity-bar").progressbar({value: char2.positivity});
+    $( "#char2-positivity-bar .ui-widget-header").css("background", pairs[char2.status]).css("border-color", pairs[char2.status]);
+    $( "#char3-positivity-bar").progressbar({value: char3.positivity});
+    $( "#char3-positivity-bar .ui-widget-header").css("background", pairs[char3.status]).css("border-color", pairs[char3.status]);
+    $( "#char4-positivity-bar").progressbar({value: char4.positivity});
+    $( "#char4-positivity-bar .ui-widget-header").css("background", pairs[char4.status]).css("border-color", pairs[char4.status]);
+    $( "#char5-positivity-bar").progressbar({value: char5.positivity});
+    $( "#char5-positivity-bar .ui-widget-header").css("background", pairs[char5.status]).css("border-color", pairs[char5.status]);
 }
 
 // illness generator
 Character.prototype.illnessGenerator = function() {
   var num = Math.floor(Math.random() * Math.floor(80))
-  if (num === 1 && this.illness.includes("Dysentery") == false ) {
-    this.illness.push("Dysentery")
-    $(".ongoing-events").prepend(this.name + " got Dysentery <br>")
-  } else if (num === 2 && this.illness.includes("Gonorrhea") == false) {
-    this.illness.push("Gonorrhea")
-    $(".ongoing-events").prepend(this.name + " got Gonorrhea <br>")
-  } else if (num === 3 && this.illness.includes("Yellow Fever") == false) {
-    this.illness.push("Yellow Fever")
-    $(".ongoing-events").prepend(this.name + " got Yellow Fever <br>")
-  } else if (num === 4 && this.illness.includes("Pertussis") == false) {
-    this.illness.push("Pertussis")
-    $(".ongoing-events").prepend(this.name + " got Pertussis <br>")
-  } else if (num === 5 && this.illness.includes("Broken Arm") == false){
-    this.illness.push("Broken Arm")
-    $(".ongoing-events").prepend(this.name + " got a Broken Arm <br>")
+  if (num === 1 && this.illness.includes("Panic Dumps") == false ) {
+    this.illness.push("Panic Dumps")
+    $(".ongoing-events").prepend(this.name + " has Panic Dumps <br>")
+  } else if (num === 2 && this.illness.includes("Oversexed") == false) {
+    this.illness.push("Oversexed")
+    $(".ongoing-events").prepend(this.name + " is Oversexed <br>")
+  } else if (num === 3 && this.illness.includes("Mad Horny") == false) {
+    this.illness.push("Mad Horny")
+    $(".ongoing-events").prepend(this.name + " is Mad Horny <br>")
+  } else if (num === 4 && this.illness.includes("FOMO") == false) {
+    this.illness.push("FOMO")
+    $(".ongoing-events").prepend(this.name + " has FOMO <br>")
+  } else if (num === 5 && this.illness.includes("Wanker's Arm") == false){
+    this.illness.push("Wanker's Arm")
+    $(".ongoing-events").prepend(this.name + " has Wanker's Arm <br>")
   }
 }
-//food checker
-Wagon.prototype.resourceChecker = function() {
-  if (this.food <= 0) {
-    this.food = 0
-    wagon.characters.forEach(function(char){
-      char.health -= 10
+//tendies checker
+paidgroup.prototype.resourceChecker = function() {
+  if (this.tendies <= 0) {
+    this.tendies = 0
+    paidgroup.characters.forEach(function(char){
+      char.positivity -= 10
     });
   }
-  if (this.bullet <= 0) {
-    this.bullet = 0
+  if (this.bitcoin <= 0) {
+    this.bitcoin = 0
   }
 }
 
-//Checks for illness, status changes, and character death
-Wagon.prototype.statusAdjuster = function() {
-  wagon.characters.forEach(function(char){
+//Checks for illness, status changes, and character rekt
+paidgroup.prototype.statusAdjuster = function() {
+  paidgroup.characters.forEach(function(char){
     if (char.illness.length === 1) {
-      char.health -= 2
+      char.positivity -= 2
     } else if (char.illness.length === 2) {
-      char.health -= 4
+      char.positivity -= 4
     } else if (char.illness.length >= 3) {
-      char.health -= 6
+      char.positivity -= 6
     }
 
-    if (char.health >= 80) {
-      char.status = "Good"
-    } else if (char.health < 80 && char.health >= 20) {
-      char.status = "Fair"
-    } else if (char.health < 20 && char.health > 0) {
-      char.status = "Poor"
+    if (char.positivity >= 80) {
+      char.status = "Sky-high ROI"
+    } else if (char.positivity < 80 && char.positivity >= 20) {
+      char.status = "Even-Steven"
+    } else if (char.positivity < 20 && char.positivity > 0) {
+      char.status = "Fukt"
     } else {
-      char.status = "Dead"
+      char.status = "Rekt"
     }
-    char.healthBar();
+    char.positivityBar();
 
-    if (char.health <= 0) {
-      var index = wagon.characters.indexOf(char)
-      wagon.characters.splice(index, 1)
-      char.status = "Dead"
+    if (char.positivity <= 0) {
+      var index = paidgroup.characters.indexOf(char)
+      paidgroup.characters.splice(index, 1)
+      char.status = "Rekt"
     }
   })
-  if (wagon.characters.length === 0) {
-    buildEndModal("dead", "death", "Try Again")
-    $(".button-content").prepend("Game Over! You killed everyone. Great job...")
+  if (paidgroup.characters.length === 0) {
+    buildEndModal("Rekt", "Pleb", "FOMO back in?")
+    $(".button-content").prepend("Game Over! Everyone is rekt and moving back in with their parents...")
     $("#myModal").toggle();
   }
 }
 
 //calculates potential illnesses
-Wagon.prototype.turn = function() {
-  this.hunted = 0;
-  wagon.eventGrabber();
-  wagon.characters.forEach(function(char){
+paidgroup.prototype.turn = function() {
+  this.airdropped = 0;
+  paidgroup.eventGrabber();
+  paidgroup.characters.forEach(function(char){
     char.illnessGenerator()
   });
-    wagon.statusAdjuster()
-    if (wagon.food > 0) {
-    wagon.food -= (wagon.characters.length * 5 )
-  } else if (wagon.food <= 0) {
-    wagon.food = 0
+    paidgroup.statusAdjuster()
+    if (paidgroup.tendies > 0) {
+    paidgroup.tendies -= (paidgroup.characters.length * 5 )
+  } else if (paidgroup.tendies <= 0) {
+    paidgroup.tendies = 0
   }
     this.days += 1
     this.distance += 10
     landmarkEvent();
     this.completed = (this.completed + 2);
     journey(this.completed);
-    wagon.resourceChecker()
+    paidgroup.resourceChecker()
 }
 
 function journey(dist) {
@@ -128,22 +128,22 @@ function journey(dist) {
 
 
 
-  // function for resting -- cure illness, gain some health
-Wagon.prototype.rest = function() {
-  wagon.characters.forEach(function(char){
+  // function for resting -- cure illness, gain some positivity
+paidgroup.prototype.rest = function() {
+  paidgroup.characters.forEach(function(char){
     char.illness.splice(0, 1)
-    if (char.health < 99) {
-    char.health += 2
+    if (char.positivity < 99) {
+    char.positivity += 2
     }
   });
-  wagon.statusAdjuster()
-  wagon.food -= (wagon.characters.length * 5 )
+  paidgroup.statusAdjuster()
+  paidgroup.tendies -= (paidgroup.characters.length * 5 )
   this.days += 1
-  wagon.resourceChecker()
+  paidgroup.resourceChecker()
 }
 
   //event grabber
-Wagon.prototype.eventGrabber = function() {
+paidgroup.prototype.eventGrabber = function() {
   var num = Math.floor(Math.random() * Math.floor(100))
   if (this.distance === 100 || this.distance === 200 || this.distance === 300 || this.distance === 400 || this.distance === 500) {
 
@@ -157,8 +157,8 @@ Wagon.prototype.eventGrabber = function() {
     negativeEvent()
     //call negative event
   } else if (num < 40 && num >= 35){
-    deathEvent()
-    //call death event
+    rektEvent()
+    //call rekt event
   }
 }
   //random positiveEvent
@@ -166,64 +166,64 @@ function positiveEvent() {
   var num = Math.floor(Math.random() * Math.floor(5))
   var ranSupplyIncrease = Math.floor(Math.random() * (200 - 100) + 100)
   if (num === 1) {
-    $('.ongoing-events').prepend('As you rest by the river, you find ' + ranSupplyIncrease + ' gold. <br>')
-    wagon.money += ranSupplyIncrease
-    $('.wagon-money-remaining').text(wagon.money.toFixed(2));
+    $('.ongoing-events').prepend('You find the private key to an old ' + ranSupplyIncrease + ' wallet. <br>')
+    paidgroup.bitcoin += ranSupplyIncrease
+    $('.paidgroup-bitcoin-remaining').text(paidgroup.bitcoin.toFixed(2));
   } else if (num === 2) {
-    $('.ongoing-events').prepend('You come across an abandoned wagon, you find ' + ranSupplyIncrease + ' unspoiled food <br>')
-    wagon.food += ranSupplyIncrease
-    $('.wagon-food-remaining').text(wagon.food.toFixed(2));
+    $('.ongoing-events').prepend('You come across an abandoned paidgroup, you find ' + ranSupplyIncrease + ' unspoiled tendies <br>')
+    paidgroup.tendies += ranSupplyIncrease
+    $('.paidgroup-tendies-remaining').text(paidgroup.tendies.toFixed(2));
   } else if (num === 3) {
-    $('.ongoing-events').prepend('You found a wounded deer- food increased by ' + ranSupplyIncrease + ' <br>')
-    wagon.food += ranSupplyIncrease
-    $('.wagon-food-remaining').text(wagon.food.toFixed(2));
+    $('.ongoing-events').prepend('You found a wounded wassie ' + ranSupplyIncrease + ' <br>')
+    paidgroup.tendies += ranSupplyIncrease
+    $('.paidgroup-tendies-remaining').text(paidgroup.tendies.toFixed(2));
   } else if (num === 4) {
-    $('.ongoing-events').prepend('As you travel along, you come across a group of suckers. You got some free shit- money increased by ' + ranSupplyIncrease + '. <br>')
-    wagon.money += ranSupplyIncrease
-    $('.wagon-money-remaining').text(wagon.money.toFixed(2));
+    $('.ongoing-events').prepend('You launch an ICO and dump on some plebs. <br> Bitcoin increased by ' + ranSupplyIncrease + '. <br>')
+    paidgroup.bitcoin += ranSupplyIncrease
+    $('.paidgroup-bitcoin-remaining').text(paidgroup.bitcoin.toFixed(2));
   } else if (num === 5){
-    $('.ongoing-events').prepend('You ambush and murder another party. We feast tonight. <br> You got ' + ranSupplyIncrease + ' pounds of food and ' + (ranSupplyIncrease/2) + ' dollars' )
-    wagon.money += (ranSupplyIncrease/2)
-    wagon.food += ranSupplyIncrease
-    $('.wagon-money-remaining').text(wagon.money.toFixed(2));
-    $('.wagon-food-remaining').text(wagon.food.toFixed(2));
+    $('.ongoing-events').prepend('You jack a paid group at Consensus. We feast with McAfee tonight. <br> You got ' + ranSupplyIncrease + ' pounds of tendies and ' + (ranSupplyIncrease/2) + ' bitcoin' )
+    paidgroup.bitcoin += (ranSupplyIncrease/2)
+    paidgroup.tendies += ranSupplyIncrease
+    $('.paidgroup-bitcoin-remaining').text(paidgroup.bitcoin.toFixed(2));
+    $('.paidgroup-tendies-remaining').text(paidgroup.tendies.toFixed(2));
   }
 }
   //random neutralEvent
 function neutralEvent() {
   var num = Math.floor(Math.random() * Math.floor(5))
   if (num === 1) {
-    $(".ongoing-events").prepend("One of you oxen was pregnant and gave birth. The baby died and she is sad, but continues on. <br>")
+    $(".ongoing-events").prepend("One of your plebs was rekt and starts being a pissy-pants. They start passive-aggressively FUDing, but remain in the discord. <br>")
   } else if (num === 2) {
-    $(".ongoing-events").prepend("You get a letter from home. <br>")
+    $(".ongoing-events").prepend("You get a text from mom. <br>")
   } else if (num === 3) {
-    $(".ongoing-events").prepend("Your party finds a small lake and decides to go for a swim. <br>")
+    $(".ongoing-events").prepend("Your group sets up a shitcoin faucet. <br>")
   } else if (num === 4) {
-    $(".ongoing-events").prepend("You find a small bunny and decide to keep it (not as food, what's wrong with you.) <br>")
+    $(".ongoing-events").prepend("You find a smol wabbit and decide to keep it (not as tendies, what's wrong with you.) <br>")
   } else if (num === 5){
-    $(".ongoing-events").prepend("A member of your party explores their sexuality with a neighbor boy. <br>")
+    $(".ongoing-events").prepend("A paid group member accidentally posts a dick pic in the discord <br>")
   }
 }
   //random negativeEvent
 function negativeEvent() {
   var num = Math.floor(Math.random() * Math.floor(5))
   var ranSupplyDecrease = Math.floor(Math.random() * (200 - 100) + 100)
-  var index = Math.floor(Math.random() * Math.floor(wagon.characters.length))
+  var index = Math.floor(Math.random() * Math.floor(paidgroup.characters.length))
   if (num === 1) {
-    $(".ongoing-events").prepend("Your party finds a small lake and decides to go for a swim. Unfortunately the lake was full of piranhas. <br>" + wagon.characters[index].name + " got hurt! <br>")
-    wagon.characters[index].health -= 10
-  } else if (num === 2 && wagon.characters[index].illness.includes("Gonorrhea") == false) {
-    $(".ongoing-events").prepend("You find a small bunny and decide to keep it. The bunny bites " + wagon.characters[index].name + ". Now " + wagon.characters[index].name + " has gonorrhea.<br>")
-    wagon.characters[index].illness.push("Gonorrhea")
+    $(".ongoing-events").prepend("Your group sets up a shitcoin faucet, which is immediately exploited <br>" + paidgroup.characters[index].name + " gets depressed <br>")
+    paidgroup.characters[index].positivity -= 10
+  } else if (num === 2 && paidgroup.characters[index].illness.includes("Oversexed") == false) {
+    $(".ongoing-events").prepend("Your sick gainz impress too many ladies. You can't beat them off with a stick, so they beat you off with one." + paidgroup.characters[index].name + ". Now " + paidgroup.characters[index].name + " has Oversexed.<br>")
+    paidgroup.characters[index].illness.push("Oversexed")
   } else if (num === 3) {
-    $(".ongoing-events").prepend("Your party is ambushed, they hold you hostage and take " + ranSupplyDecrease + " pounds of your food. <br>")
-    wagon.food -= ranSupplyDecrease
-    wagon.days += index
-    $('.wagon-food-remaining').text(wagon.food.toFixed(2));
+    $(".ongoing-events").prepend("A herd of wassies breaks out of the fridge and steals " + ranSupplyDecrease + " pounds of your tendies. <br> Goddamn wassies! <br>")
+    paidgroup.tendies -= ranSupplyDecrease
+    paidgroup.days += index
+    $('.paidgroup-tendies-remaining').text(paidgroup.tendies.toFixed(2));
   } else if (num === 4) {
-    $(".ongoing-events").prepend("Your wagon wheel broke, in the distance you hear Jesus Take The Wheel playing. Your party loses 5 days. <br>")
-    wagon.days += 5
-    wagon.food -= ((wagon.characters.length * 5 ) * 5)
+    $(".ongoing-events").prepend("Your paidgroup discord is accidentally deleted. It takes five days to get all the plebs to rejoin. <br>")
+    paidgroup.days += 5
+    paidgroup.tendies -= ((paidgroup.characters.length * 5 ) * 5)
     document.getElementById('jesusSnatch').play();
     $("#wheel-1").fadeIn(500);
     $("#wheel-2").delay(300).fadeIn(500);
@@ -241,15 +241,15 @@ function negativeEvent() {
     $("#jesus").slideUp(5000).fadeOut(500);
     $("#star").delay(5250).fadeIn("puff").fadeOut();
   } else if (num === 5){
-    $(".ongoing-events").prepend(ranSupplyDecrease + " of your food rots because " + wagon.characters[index].name + " wet themselves as they napped on it.")
-    wagon.food -= ranSupplyDecrease
-    $('.wagon-food-remaining').text(wagon.food.toFixed(2));
+    $(".ongoing-events").prepend(ranSupplyDecrease + " of your tendies rot because " + paidgroup.characters[index].name + " was staring at charts and forgot to put them back in the freezer")
+    paidgroup.tendies -= ranSupplyDecrease
+    $('.paidgroup-tendies-remaining').text(paidgroup.tendies.toFixed(2));
   }
 }
 //landmarkEvent for distance traveled
 
-function storeModal() {
-  $('.modal-child').html('<div id="popup-text"><h2>Here is what is in your cart currently</h2><span id="wagon-food-remaining"></span></div>' + wagon.money.toFixed(2) + '<span id="back-button" class="btn btn-danger">Back</span></div>')
+function exchangeModal() {
+  $('.modal-child').html('<div id="popup-text"><h2>Here is what is in your paid group wallet, currently: </h2><span id="paidgroup-tendies-remaining"></span></div>' + paidgroup.bitcoin.toFixed(2) + '<span id="back-button" class="btn btn-danger">Back</span></div>')
 }
 
 function buildModal(value) {
@@ -279,9 +279,9 @@ function buildLandmarkModal(value, btnID1, btnID2, btn1Name, btn2Name) {
   )
 }
 
-Wagon.prototype.buildScore = function() {
+paidgroup.prototype.buildScore = function() {
   var finalScore = 10000;
-  finalScore -= ((this.days - 50) * 20) + ((5 - this.characters.length) * 2000) - (this.food * .2) - (this.money * .3) - (this.bullets* .1)
+  finalScore -= ((this.days - 50) * 20) + ((5 - this.characters.length) * 2000) - (this.tendies * .2) - (this.bitcoin * .3) - (this.bitcoins* .1)
   return finalScore.toFixed();
 
 }
@@ -289,209 +289,208 @@ Wagon.prototype.buildScore = function() {
 //Option 1 button - id #option1-button
 //Option 2 button - id #option2-button
 function landmarkEvent() {
-  var num = wagon.distance
+  var num = paidgroup.distance
   if (num === 100) {
-    buildLandmarkModal(num, "crossRiver", "detourRiver", "Cross River", "Detour")
-    $(".button-content").prepend("You have reached a river. You can choose to risk supplies and your party to cross the river or take 7 days to go around. <br>")
+    buildLandmarkModal(num, "buypresale", "claimairdrop", "buy pre-sale tokens", "Claim Airdrop Tokens")
+    $(".button-content").prepend("You have joined a new token's telegram group. Do you ape in to the pre-sale, or just claim the airdrop? <br>")
     $("#buttonModal").toggle();
   } else if (num === 200) {
-    buildModal("campStore");
-    $(".ongoing-events").prepend("Your party has come across a camp, make a selection for what you would like to buy. <br>")
+    buildModal("exchange");
+    $(".ongoing-events").prepend("Your paidgroup checks out Rarible, make a selection for which NFTs you would like to buy. <br>")
     $("#myModal").toggle();
     $("#gameMainScreen").fadeOut(500);
-    $("#store").delay(500).fadeIn(500);
+    $("#exchange").delay(500).fadeIn(500);
     $("#back-button").hide();
   } else if (num === 300) {
     buildLandmarkModal(num, "sacrifice", "flee", "Sacrifice", "Flee")
-    $(".button-content").prepend("As you travel along the trail you hear screams in the distance. You have no choice but to keep moving forward. When out of nowhere your wagon is surrounded by crazed cannibals. One of them steps forward and proclaims: 'I am George Donner, my family is hungry. Sacrifice one of your own and the rest are free to go on!' <br>")
+    $(".button-content").prepend("A member of your paidgroup is kidnapped by 4chan autists. Let the incels have their way with them, or grab the member and run? <br>")
     $("#buttonModal").toggle();
   } else if (num === 400) {
-    buildModal("generalStore");
-    $(".ongoing-events").prepend("Your party has come across a trading post, make a selection for what you would like to buy. <br>")
+    buildModal("noKYCexchange");
+    $(".ongoing-events").prepend("Your paid group has found a no-KYC exchange that actually has liquidity! Make a selection for what you would like to buy. <br>")
     $("#myModal").toggle();
     $("#gameMainScreen").fadeOut(500);
-    $("#store").delay(500).fadeIn(500);
+    $("#exchange").delay(500).fadeIn(500);
     $("#back-button").hide();
   } else if (num === 500){
-    buildEndModal(num, "win", "Play Again!")
-    var endScore = wagon.buildScore()
-    $(".button-content").prepend("<h4>WINNER!</h4>Your score is: " + endScore);
+    buildEndModal(num, "moon", "FOMO back in?!")
+    var endScore = paidgroup.buildScore()
+    $(".button-content").prepend("<h4>Moon mission successful!</h4>Your score is: " + endScore);
     $("#buttonModal").addClass('confetti');
     $("#buttonModal").toggle();
   }
 }
 //landmark 1 button events
-function detourRiver() {
+function claimairdrop() {
   for(i=0; i < 8; i++) {
-    wagon.days += 1
-    wagon.food -= (wagon.characters.length * 5 )
-    wagon.resourceChecker()
-    wagon.statusAdjuster()
+    paidgroup.days += 1
+    paidgroup.tendies -= (paidgroup.characters.length * 5 )
+    paidgroup.resourceChecker()
+    paidgroup.statusAdjuster()
   }
-  $(".ongoing-events").prepend("You spent seven days and went around the river. <br>")
-  wagon.statusAdjuster()
+  $(".ongoing-events").prepend("You spent seven days fulfilling the airdrop's requirements. <br>")
+  paidgroup.statusAdjuster()
 }
-function crossRiver() {
+function buypresale() {
   var num = Math.floor(Math.random() * Math.floor(100))
-  var index = Math.floor(Math.random() * Math.floor(wagon.characters.length))
+  var index = Math.floor(Math.random() * Math.floor(paidgroup.characters.length))
   if (num > 50) {
-    wagon.characters[index].health -= 30
-    wagon.food -= (wagon.food * 0.4)
-    wagon.money -= (wagon.money * 0.2)
+    paidgroup.characters[index].positivity -= 30
+    paidgroup.tendies -= (paidgroup.tendies * 0.4)
+    paidgroup.bitcoin -= (paidgroup.bitcoin * 0.2)
     buildModal("riverFail");
-    $(".ongoing-events").prepend("Your wagon tipped over and " + wagon.characters[index].name + " was swallowed by a giant catfish. Luckily they narrowly escaped, but were still injured. The catfish also feasted on " + (wagon.food * 0.4).toFixed(0) + " pounds of food and stole " + (wagon.money * 0.2).toFixed(0) + " gold. <br>")
+    $(".ongoing-events").prepend("Your paid group aped in to the presale and " + paidgroup.characters[index].name + " was dumped on by pre-pre-sale whales the second it launched. They didn't lose everything, but goddamn are they pissed. Adding insult to injury, a belligerent smol ting also swiped " + (paidgroup.tendies * 0.4).toFixed(0) + " pounds of tendies and stole " + (paidgroup.bitcoin * 0.2).toFixed(0) + " bitcoin. <br>")
      $("#myModal").toggle();
     for(i=0; i < 4; i++) {
-      wagon.statusAdjuster()
-      wagon.days += 1
-      wagon.food -= (wagon.characters.length * 5 )
+      paidgroup.statusAdjuster()
+      paidgroup.days += 1
+      paidgroup.tendies -= (paidgroup.characters.length * 5 )
     }
   } else {
     buildModal("riverWin");
-    $(".ongoing-events").prepend("Your wagon successfully crossed the river! <br>")
+    $(".ongoing-events").prepend("Your paid group successfully dumped the shittokens! <br>")
      $("#myModal").toggle();
-    wagon.days += 1
-    wagon.food -= (wagon.characters.length * 5 )
+    paidgroup.days += 1
+    paidgroup.tendies -= (paidgroup.characters.length * 5 )
   }
 
-  wagon.resourceChecker()
-  wagon.statusAdjuster()
+  paidgroup.resourceChecker()
+  paidgroup.statusAdjuster()
 }
 // landmark 3 button events
 function sacrifice() {
-  var index = Math.floor(Math.random() * Math.floor(wagon.characters.length))
-  wagon.characters[index].health = 0
-  $(".ongoing-events").prepend(wagon.characters[index].name + " has been sacrificed, the rest of your party is free to go. <br>")
-  wagon.statusAdjuster()
+  var index = Math.floor(Math.random() * Math.floor(paidgroup.characters.length))
+  paidgroup.characters[index].positivity = 0
+  $(".ongoing-events").prepend(paidgroup.characters[index].name + " is taking all of 4chan's virginity, and will be busy for a while. The rest of your party can go on. <br>")
+  paidgroup.statusAdjuster()
 }
 function flee() {
   var num = Math.floor(Math.random() * Math.floor(100))
-  var index = Math.floor(Math.random() * Math.floor(wagon.characters.length))
+  var index = Math.floor(Math.random() * Math.floor(paidgroup.characters.length))
   if (num > 50) {
-    wagon.characters[index].health = 0
+    paidgroup.characters[index].positivity = 0
     buildModal("fleeFail");
-    $(".ongoing-events").prepend("George caught " + wagon.characters[index].name + " while trying to flee. We can only assume he was tasty af. <br>")
+    $(".ongoing-events").prepend("A wild autist caught " + paidgroup.characters[index].name + " while trying to flee. RIP their butt-virginity. <br>")
     $("#myModal").toggle();
-    wagon.statusAdjuster()
-    wagon.days += 1
-    wagon.food -= (wagon.characters.length * 5 )
+    paidgroup.statusAdjuster()
+    paidgroup.days += 1
+    paidgroup.tendies -= (paidgroup.characters.length * 5 )
   } else {
-    $(".ongoing-events").prepend("Everyone was lucky enough to escape unscathed. <br>")
-    wagon.days += 1
-    wagon.food -= (wagon.characters.length * 5 )
+    $(".ongoing-events").prepend("4chan was distracted by an un-trolled SJW, and you all escaped unharmed. <br>")
+    paidgroup.days += 1
+    paidgroup.tendies -= (paidgroup.characters.length * 5 )
   }
-  wagon.statusAdjuster()
-  wagon.resourceChecker()
+  paidgroup.statusAdjuster()
+  paidgroup.resourceChecker()
 }
-function deathEvent() {
+function rektEvent() {
   var num = Math.floor(Math.random() * Math.floor(5))
-  var index = Math.floor(Math.random() * Math.floor(wagon.characters.length))
-  if (num === 1 && wagon.characters[index].health < 65) {
+  var index = Math.floor(Math.random() * Math.floor(paidgroup.characters.length))
+  if (num === 1 && paidgroup.characters[index].positivity < 65) {
     buildModal(num);
-    $(".ongoing-events").prepend(wagon.characters[index].name + " has been shot and killed by Dick Cheney while straying away from the party.<br>")
+    $(".ongoing-events").prepend(paidgroup.characters[index].name + " was convinced by a bot account to go all-in on XRP, and is perma-rekt.<br>")
      $("#myModal").toggle();
-    wagon.characters[index].health = 0
-    wagon.characters[index].status = "Dead"
-  } else if (num === 2 && wagon.characters[index].illness.includes("Dysentery") == true && wagon.characters[index].health < 65) {
+    paidgroup.characters[index].positivity = 0
+    paidgroup.characters[index].status = "Rekt"
+  } else if (num === 2 && paidgroup.characters[index].illness.includes("Panic Dumps") == true && paidgroup.characters[index].positivity < 65) {
     buildModal(num);
-    $(".ongoing-events").prepend(wagon.characters[index].name + " wakes up screaming in the middle of their nap. They hunch over and fall to the ground. Their chest bursts open and the creature inside jumps out and attacks " + wagon.characters[0].name + " with acid and scurries off into the wilderness.<br>" + wagon.characters[index].name + " is dead." )
+    $(".ongoing-events").prepend(paidgroup.characters[index].name + "didn't do their due diligence, and starts dumping everything at the bottom." + paidgroup.characters[0].name + " with acid and scurries off into the wilderness.<br>" + paidgroup.characters[index].name + " is Rekt." )
     $("#myModal").toggle();
-    wagon.characters[index].health = 0
-    wagon.characters[index].status = "Dead"
-    wagon.characters[0].health -= 15
-    wagon.characters[0].illness.push("Acid Burns")
-  } else if (num === 3 && wagon.characters[index].health < 65 ) {
+    paidgroup.characters[index].positivity = 0
+    paidgroup.characters[index].status = "Rekt"
+    paidgroup.characters[0].positivity -= 15
+  } else if (num === 3 && paidgroup.characters[index].positivity < 65 ) {
     buildModal(num);
-    $(".ongoing-events").prepend(wagon.characters[index].name + " has developed Pica and has been secretly snackin' on the gold. They die of heavy metal toxicity. You lose 25% of your gold.<br>")
+    $(".ongoing-events").prepend(paidgroup.characters[index].name + " has exit-scammed and taken some of the treasury with them. Luckily, they went all-in on a TRX token so they're as good as dead.<br>")
     $("#myModal").toggle();
-    wagon.money -= (wagon.money * 0.25)
-    $('.wagon-money-remaining').text(wagon.money.toFixed(2));
-    wagon.characters[index].health = 0
-    wagon.characters[index].status = "Dead"
+    paidgroup.bitcoin -= (paidgroup.bitcoin * 0.25)
+    $('.paidgroup-bitcoin-remaining').text(paidgroup.bitcoin.toFixed(2));
+    paidgroup.characters[index].positivity = 0
+    paidgroup.characters[index].status = "Rekt"
   } else if (num === 4) {
     buildModal(num);
-    $(".ongoing-events").prepend(wagon.characters[index].name + " got like stupid stoned the night before and ate a lot of food when their munchies kicked in. You lose " + (wagon.food * 0.5).toFixed(2) + "lbs of food.<br>")
+    $(".ongoing-events").prepend(paidgroup.characters[index].name + " read a few Blockhead tweets and spent the rest of their night eating their feelings and " + (paidgroup.tendies * 0.5).toFixed(2) + "pounds of tendies.<br>")
     $("#myModal").toggle();
-    wagon.food -= (wagon.food * 0.5)
-    $('.wagon-food-remaining').text(wagon.food.toFixed(2));
-  } else if (num === 5 && wagon.characters[index].illness == "Gonorrhea") {
+    paidgroup.tendies -= (paidgroup.tendies * 0.5)
+    $('.paidgroup-tendies-remaining').text(paidgroup.tendies.toFixed(2));
+  } else if (num === 5 && paidgroup.characters[index].illness == "Oversexed") {
     buildModal(num);
-    $(".ongoing-events").prepend(wagon.characters[index].name  + " has also contracted chlamyida and it has run rampant. They run off into the woods, never to be seen again.<br>")
+    $(".ongoing-events").prepend(paidgroup.characters[index].name  + " sent all of their crypto to a gamer girl, and has ridden off into the sunset with a small vial of her bath water.<br>")
     $("#myModal").toggle();
-    wagon.characters[index].health = 0
-    wagon.characters[index].status = "Dead"
+    paidgroup.characters[index].positivity = 0
+    paidgroup.characters[index].status = "Rekt"
   }
 }
-//Hunting
-Wagon.prototype.huntingTime = function() {
-  var hunt = Math.floor(Math.random() * Math.floor(150))
-  if (this.hunted == 1) {
+//airdrop
+paidgroup.prototype.airdropTime = function() {
+  var airdrop = Math.floor(Math.random() * Math.floor(150))
+  if (this.airdropped == 1) {
     var num = 1;
     document.getElementById('shotgun-dry').play();
     buildModal(num);
-    $(".ongoing-events").prepend("You have already hunted- you must continue to a new area to hunt further.<br>");
+    $(".ongoing-events").prepend("You have already claimed this airdrop. You must find another scam.<br>");
     $("#myModal").toggle();
-  } else if (this.hunted == 0 && wagon.bullets > 0){
-    this.food += hunt
-    this.bullets -= 1
-    wagon.statusAdjuster()
-    this.hunted += 1;
-    $(".ongoing-events").prepend("You got " + hunt + " pounds of food.<br>")
+  } else if (this.airdropped == 0 && paidgroup.bitcoins > 0){
+    this.tendies += airdrop
+    this.bitcoins -= 1
+    paidgroup.statusAdjuster()
+    this.airdropped += 1;
+    $(".ongoing-events").prepend("You got " + airdrop + " pounds of tendies.<br>")
     document.getElementById('shotgun-fire').play();
   }
 
-  if (hunt === 0) {
-    buildModal("huntFail");
-    $(".ongoing-events").prepend("You came back empty handed. Your family resents you.<br>");
+  if (airdrop === 0) {
+    buildModal("airdropFail");
+    $(".ongoing-events").prepend("Your burner phone number was blocked by telegram. No airdrop today, pleb.<br>");
     $("#myModal").toggle();
   }
 
-  if (wagon.bullets <= 0) {
-    wagon.bullets = 0
+  if (paidgroup.bitcoins <= 0) {
+    paidgroup.bitcoins = 0
   }
-  $('#wagon-bullets-remaining').text(wagon.bullets);
+  $('#paidgroup-bitcoins-remaining').text(paidgroup.bitcoins);
 }
 //Profession checker
-Wagon.prototype.profession = function(input) {
+paidgroup.prototype.profession = function(input) {
   if (input == 1) {
-    this.money += 500
+    this.bitcoin += 500
   } else if (input == 2) {
-    this.money += 300
+    this.bitcoin += 300
   } else if (input == 3) {
-    this.food += 500
+    this.tendies += 500
   } else if (input == 4) {
-    this.food += 250
-    this.money += 250
+    this.tendies += 250
+    this.bitcoin += 250
   } else if (input == 5) {
-    this.money += 400
-    this.food += 100
+    this.bitcoin += 400
+    this.tendies += 100
   } else if (input == 6) {
-    this.money += 50
+    this.bitcoin += 50
   }
 }
 
-function storeSubTotal(food, bullets) {
-  var total = (food * 0.2) + (bullets * 0.1);
-  $('.food-total').text((food * 0.2).toFixed(2));
-  $('.bullet-total').text((bullets * 0.1).toFixed(2));
+function exchangeSubTotal(tendies, bitcoins) {
+  var total = (tendies * 0.2) + (bitcoins * 0.1);
+  $('.tendies-total').text((tendies * 0.2).toFixed(2));
+  $('.bitcoin-total').text((bitcoins * 0.1).toFixed(2));
   return total.toFixed(2);
 }
 
-function storeBuy(food, bullets) {
-    var total = ((food * 0.2) + (bullets * 0.1)).toFixed(2);
+function exchangeBuy(tendies, bitcoins) {
+    var total = ((tendies * 0.2) + (bitcoins * 0.1)).toFixed(2);
 
-    if (total == NaN || isNaN(total) || wagon.money < total || food < 0 || bullets < 0) {
-      $("#store").effect("shake", {times:3}, 700);
+    if (total == NaN || isNaN(total) || paidgroup.bitcoin < total || tendies < 0 || bitcoins < 0) {
+      $("#exchange").effect("shake", {times:3}, 700);
     }
     else {
-      wagon.money -= total;
-      wagon.food += food;
-      wagon.bullets += bullets;
-      $("#store").fadeOut(500);
+      paidgroup.bitcoin -= total;
+      paidgroup.tendies += tendies;
+      paidgroup.bitcoins += bitcoins;
+      $("#exchange").fadeOut(500);
       $("#gameMainScreen").delay(500).fadeIn(500);
-      $('.wagon-money-remaining').text(wagon.money.toFixed(2));
-      $("#food-fields input, #bullet-fields input").val(0);
-      $(".store-total, .bullet-total, .food-total").text("$0");
+      $('.paidgroup-bitcoin-remaining').text(paidgroup.bitcoin.toFixed(2));
+      $("#tendies-fields input, #bitcoin-fields input").val(0);
+      $(".exchange-total, .bitcoin-total, .tendies-total").text("$0");
       return total;
   }
 }
@@ -512,11 +511,11 @@ function textUpdateUI() {
   $('#player-three-illness').text(char3.illness.length);
   $('#player-four-illness').text(char4.illness.length);
   $('#player-five-illness').text(char5.illness.length);
-  $('#wagon-food-remaining').text(wagon.food.toFixed(0));
-  $('.wagon-money-remaining').text(wagon.money.toFixed(2));
-  $('#wagon-bullets-remaining').text(wagon.bullets.toFixed(0));
-  $('.current-date').text(wagon.days);
-  $('.distance-traveled').text(wagon.distance);
+  $('#paidgroup-tendies-remaining').text(paidgroup.tendies.toFixed(0));
+  $('.paidgroup-bitcoin-remaining').text(paidgroup.bitcoin.toFixed(2));
+  $('#paidgroup-bitcoins-remaining').text(paidgroup.bitcoins.toFixed(0));
+  $('.current-date').text(paidgroup.days);
+  $('.distance-traveled').text(paidgroup.distance);
 }
 
 function validateNames(profession, playerOne, playerTwo, playerThree, playerFour, playerFive) {
@@ -525,7 +524,7 @@ function validateNames(profession, playerOne, playerTwo, playerThree, playerFour
     $("#profession").effect("shake", {times:3}, 700)
   } else {
     $("#characterInput").fadeOut(500);
-    $("#store").delay(500).fadeIn(500);
+    $("#exchange").delay(500).fadeIn(500);
   }
 }
 
@@ -540,7 +539,7 @@ function enableSubmit(ele) {
 
 $(document).ready(function(){
   var x = 1;
-  $('#wagon-images').addClass('sky1');
+  $('#paidgroup-images').addClass('sky1');
 
   // modal that closes with click anywhere
   var modal = document.getElementById('myModal');
@@ -568,80 +567,80 @@ $(document).ready(function(){
     char3 = new Character(playerThreeName)
     char4 = new Character(playerFourName)
     char5 = new Character(playerFiveName)
-    wagon = new Wagon()
+    paidgroup = new paidgroup()
     journey(0)
-    char1.healthBar()
-    wagon.characters.push(char1, char2, char3, char4, char5)
-    wagon.profession(professionValue)
+    char1.positivityBar()
+    paidgroup.characters.push(char1, char2, char3, char4, char5)
+    paidgroup.profession(professionValue)
     textUpdateUI()
   });
 
   $("#subtotal").click(function(){
-    var buyFood = parseInt($("#food-fields input").val())
-    var buyBullets = parseInt($("#bullet-fields input").val())
-    $(".store-total").text("$ " + storeSubTotal(buyFood, buyBullets))
+    var buytendies = parseInt($("#tendies-fields input").val())
+    var buybitcoins = parseInt($("#bitcoin-fields input").val())
+    $(".exchange-total").text("$ " + exchangeSubTotal(buytendies, buybitcoins))
   });
 
-  $("#storeBTN").click(function(){
-    var buyFood = parseInt($("#food-fields input").val())
-    var buyBullets = parseInt($("#bullet-fields input").val())
-    storeBuy(buyFood, buyBullets)
-    $('#wagon-food-remaining').text(wagon.food);
-    $('.wagon-money-remaining').text(wagon.money.toFixed(2));
-    $('#wagon-bullets-remaining').text(wagon.bullets);
+  $("#exchangeBTN").click(function(){
+    var buytendies = parseInt($("#tendies-fields input").val())
+    var buybitcoins = parseInt($("#bitcoin-fields input").val())
+    exchangeBuy(buytendies, buybitcoins)
+    $('#paidgroup-tendies-remaining').text(paidgroup.tendies);
+    $('.paidgroup-bitcoin-remaining').text(paidgroup.bitcoin.toFixed(2));
+    $('#paidgroup-bitcoins-remaining').text(paidgroup.bitcoins);
     document.getElementById('openingSong').pause();
   });
 
 $("#preCheckout").click(function(){
-  storeModal();
+  exchangeModal();
   $('#myModal').toggle();
 });
 
 $("#back-button").click(function(){
-  $("#store").fadeOut(500);
+  $("#exchange").fadeOut(500);
   $("#characterInput").delay(500).fadeIn(500);
 });
 
   $("#continue-button").click(function(){
     $("#continue-button").css({"pointer-events":"none","background-color":"lightgreen","border-color":"lightgreen"});
     setTimeout(function() { enableSubmit("#continue-button") }, 500);
-    wagon.turn()
-    wagon.statusAdjuster()
+    paidgroup.turn()
+    paidgroup.statusAdjuster()
     textUpdateUI()
 
     if (x < 6) {
-      $('#wagon-' + x).toggle();
-      $('#wagon-images').removeClass('sky' + x);
+      $('#paidgroup-' + x).toggle();
+      $('#paidgroup-images').removeClass('sky' + x);
       x++;
-      $('#wagon-' + x).toggle();
-      $('#wagon-images').addClass('sky' + x);
+      $('#paidgroup-' + x).toggle();
+      $('#paidgroup-images').addClass('sky' + x);
     } else {
-      $('#wagon-' + x).toggle();
-      $('#wagon-images').removeClass('sky' + x);
+      $('#paidgroup-' + x).toggle();
+      $('#paidgroup-images').removeClass('sky' + x);
       x = 1;
-      $('#wagon-' + x).toggle();
-      $('#wagon-images').addClass('sky' + x);
+      $('#paidgroup-' + x).toggle();
+      $('#paidgroup-images').addClass('sky' + x);
     }
   });
 
   $("#rest-button").click(function(){
     $("#rest-button").css({"pointer-events":"none","background-color":"lightblue","border-color":"lightblue"});
     setTimeout(function() { enableSubmit("#rest-button") }, 500);
-    wagon.rest()
+    paidgroup.rest()
     textUpdateUI()
   });
 
-  $('#hunt-button').click(function(){
-    wagon.huntingTime()
-    wagon.resourceChecker()
+  $('#airdrop-button').click(function(){
+    paidgroup.airdropTime()
+    paidgroup.resourceChecker()
     textUpdateUI()
   });
 
-  $(document).on('click', '#deathButton', function(){
+  $(document).on('click', '#rektButton', function(){
     history.go(0)
   });
 
-  $(document).on('click', '#winButton', function(){
+  $(document).on('click', '#moonButton', function(){
     history.go(0)
   });
 
@@ -649,13 +648,13 @@ $("#back-button").click(function(){
     history.go(0)
   });
 
-  $(document).on('click', '#crossRiverButton', function(){
-    crossRiver()
+  $(document).on('click', '#buypresaleButton', function(){
+    buypresale()
     textUpdateUI()
     $('#buttonModal').hide();
   });
-  $(document).on('click', '#detourRiverButton', function(){
-    detourRiver()
+  $(document).on('click', '#claimairdropButton', function(){
+    claimairdrop()
     textUpdateUI()
     $('#buttonModal').hide();
 

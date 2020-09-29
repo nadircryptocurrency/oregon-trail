@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Oregon Trail</title>
+  <title>Shitcoin Trail</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Londrina+Solid:300,400,900" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -21,46 +21,46 @@
     <div id="characterSetup">
       <div id="start">
         <div class="main-title">
-          <h1>The Oregon Trail</h1>
+          <h1>The Shitcoin Trail</h1>
         </div>
         <div class="icon-animate">
           <!-- <img src="img/beans.png" alt=""> -->
         </div>
-        <div class="icon-wagon">
+        <div class="icon-paidgroup">
           <!-- <img src="img/beans.png" alt=""> -->
         </div>
         <img src="img/start-cover.jpg" alt="valley">
         <span id="startBTN" class="btn btn-success">Start</span>
       </div>
         <div id="characterInput">
-          <h1>The Oregon Trail</h1>
+          <h1>The Shitcoin Trail</h1>
           <div class="row">
             <div id="profession" class="col-md-3">
               <p>Select your profession</p>
               <div class="prettyColumn">
                 <div id="radio1">
-                  <label><input type="radio" name="profession" value="1" checked> Banker</label>
-                  <span class="tooltiptext">The Banker starts with $1000 and no initial food.</span>
+                  <label><input type="radio" name="profession" value="1" checked> Venture Capitalist</label>
+                  <span class="tooltiptext">The Venture Capitalist starts with 1000 Bitcoin and no initial tendies.</span>
                 </div>
                 <div id="radio2">
-                  <label><input type="radio" name="profession" value="2"> Doctor</label>
-                  <span class="tooltiptext">The Doctor starts with $800 and no initial food.</span>
+                  <label><input type="radio" name="profession" value="2"> Trust Fund Baby</label>
+                  <span class="tooltiptext">The Trust Fund Baby starts with 800 Bitcoin and no initial tendies.</span>
                 </div>
                 <div id="radio3">
-                  <label><input type="radio" name="profession" value="3"> Farmer</label>
-                  <span class="tooltiptext">The Farmer starts with $500 and 500lbs of initial food.</span>
+                  <label><input type="radio" name="profession" value="3"> Mama's Boy</label>
+                  <span class="tooltiptext">The Mama's Boy starts with 500 Bitcoin and 500lbs of initial tendies.</span>
                 </div>
                 <div id="radio4">
-                  <label><input type="radio" name="profession" value="4"> Rancher</label>
-                  <span class="tooltiptext">The Rancher starts with $750 and 250lbs of initial food.</span>
+                  <label><input type="radio" name="profession" value="4"> TA guru</label>
+                  <span class="tooltiptext">The TA guru starts with 750 Bitcoin and 250lbs of initial tendies.</span>
                 </div>
                 <div id="radio5">
-                  <label><input type="radio" name="profession" value="5"> Merchant</label>
-                  <span class="tooltiptext">The Merchant starts with $900 and 100lbs of initial food.</span>
+                  <label><input type="radio" name="profession" value="5"> Bitmex Degen</label>
+                  <span class="tooltiptext">The Bitmex Degen starts with 900 Bitcoin and 100lbs of initial tendies.</span>
                 </div>
                 <div id="radio6">
-                  <label><input type="radio" name="profession" value="6"> Teacher</label>
-                  <span class="tooltiptext">The Teacher starts with $550 and no initial food.</span>
+                  <label><input type="radio" name="profession" value="6"> Dumb Pleb</label>
+                  <span class="tooltiptext">The Dumb Pleb starts with 550 Bitcoin and no initial tendies.</span>
                 </div>
               </div>
               <span id="characterBTN" class="btn btn-success">Next</span>
@@ -68,27 +68,27 @@
             <div id="charNameInput" class="col-md-3">
               <p>Type in the names of your party:</p>
               <div class="prettyColumn">
-                <input id="char1" type="text" placeholder="name player 1" value="Wild Bill">
-                <input id="char2" type="text" placeholder="name player 2" value="Josephine">
-                <input id="char3" type="text" placeholder="name player 3" value="Cookie">
-                <input id="char4" type="text" placeholder="name player 4" value="Wyatt Twerp">
-                <input id="char5" type="text" placeholder="name player 5" value="Lil' Bobby">
+                <input id="char1" type="text" placeholder="name player 1" value="notsofast">
+                <input id="char2" type="text" placeholder="name player 2" value="Cobie">
+                <input id="char3" type="text" placeholder="name player 3" value="Bella">
+                <input id="char4" type="text" placeholder="name player 4" value="Dale">
+                <input id="char5" type="text" placeholder="name player 5" value="WittyCryptoUsername">
               </div>
             </div>
             <div class="col-md-6">
-              <img src="img/ox.png" alt="valley">
+              <img src="img/ox.png" alt="plebs">
             </div>
           </div>
         </div>
       </div>
-    <!-- inital store screen -->
-    <div id="store">
-      <div class="store-fields">
-        <div class="store-titles">
+    <!-- inital exchange screen -->
+    <div id="exchange">
+      <div class="exchange-fields">
+        <div class="exchange-titles">
         <h2>Mercantile</h2>
-        <h3>you have: $<span class="wagon-money-remaining"></span></h3>
+        <h3>you have: $<span class="paidgroup-money-remaining"></span></h3>
         </div>
-        <div class="row" id="upper-store-fields">
+        <div class="row" id="upper-exchange-fields">
           <div class="col-md-3">
             <p>Amount</p>
           </div>
@@ -102,38 +102,38 @@
             <p>Total</p>
           </div>
         </div>
-        <div class="row" id="food-fields">
+        <div class="row" id="tendies-fields">
           <div class="col-md-3">
-            <input type="number" name="food" placeholder="0" value="500">
+            <input type="number" name="tendies" placeholder="0" value="500">
           </div>
           <div class="col-md-3">
-            <p>Pounds of Food</p>
+            <p>Pounds of tendies</p>
           </div>
           <div class="col-md-3">
-            <p>$0.20</p>
+            <p>0.20 bitcoin</p>
           </div>
           <div class="col-md-3">
-            <p class="food-total"></p>
+            <p class="tendies-total"></p>
           </div>
         </div>
-        <div class="row" id="bullet-fields">
+        <div class="row" id="bitcoin-fields">
           <div class="col-md-3">
-            <input type="number" name="bullets" placeholder="0" value="10">
+            <input type="number" name="bitcoin" placeholder="0" value="10">
           </div>
           <div class="col-md-3">
-            <p>Bullets</p>
+            <p>bitcoin</p>
           </div>
           <div class="col-md-3">
-            <p>$0.10</p>
+            <p>0.10 bitcoin</p>
           </div>
           <div class="col-md-3">
-            <p class="bullet-total"></p>
+            <p class="bitcoin-total"></p>
           </div>
         </div>
         <span id="back-button" class="btn btn-danger">Back</span>
         <span id="subtotal" class="btn btn-warning">Sub-Total</span>
-        <span id="storeBTN" class="btn btn-success">Buy</span>
-        <p class="store-total">$0</p>
+        <span id="exchangeBTN" class="btn btn-success">Buy</span>
+        <p class="exchange-total">$0</p>
       </div>
     </div>
     <!-- main gameplay screen -->
@@ -142,49 +142,49 @@
         <div class="col-md-8">
           <div id="faq">
             <img src="img/faq.png" alt="Help button">
-            <p class="tooltiptext">You must travel 500 miles reach the goal.<br>Click 'continue' to travel 10 miles per day.<br>Click 'rest' to heal your team members.<br>Click 'hunt' to gather more food.<br>All actions spend one day, and each team member eats 5 food per day.</p>
+            <p class="tooltiptext">You must 500x to reach your goal.<br>Click 'continue' to try to 10x per day.<br>Click 'rest' to heal your paid group members.<br>Click 'airdrop' to gather more tendies.<br>All actions spend one day, and each group member eats 5 tendies per day.</p>
           </div>
-          <h1>The Oregon Trail</h1>
-          <div class="row" id="wagon-images">
+          <h1>The Shitcoin Trail</h1>
+          <div class="row" id="paidgroup-images">
             <div class="col-md-2">
-              <img src="img/wagon.png" id="wagon-6" alt="wagon">
+              <img src="img/paidgroup.png" id="paidgroup-6" alt="paidgroup">
               <img src="img/wheel.svg" id="wheel-6" alt="wheel">
               <img src="img/jesus.svg" id="jesus" alt="jesus">
               <img src="img/shining.svg" id="star" alt="star">
             </div>
             <div class="col-md-2">
-              <img src="img/wagon.png" id="wagon-5" alt="wagon">
+              <img src="img/paidgroup.png" id="paidgroup-5" alt="paidgroup">
               <img src="img/wheel.svg" id="wheel-5" alt="wheel">
             </div>
             <div class="col-md-2">
-              <img src="img/wagon.png" id="wagon-4" alt="wagon">
+              <img src="img/paidgroup.png" id="paidgroup-4" alt="paidgroup">
               <img src="img/wheel.svg" id="wheel-4" alt="wheel">
             </div>
             <div class="col-md-2">
-              <img src="img/wagon.png" id="wagon-3" alt="wagon">
+              <img src="img/paidgroup.png" id="paidgroup-3" alt="paidgroup">
               <img src="img/wheel.svg" id="wheel-3" alt="wheel">
             </div>
             <div class="col-md-2">
-              <img src="img/wagon.png" id="wagon-2" alt="wagon">
+              <img src="img/paidgroup.png" id="paidgroup-2" alt="paidgroup">
               <img src="img/wheel.svg" id="wheel-2" alt="wheel">
             </div>
             <div class="col-md-2">
-              <img src="img/wagon.png" id="wagon-1" alt="wagon">
+              <img src="img/paidgroup.png" id="paidgroup-1" alt="paidgroup">
               <img src="img/wheel.svg" id="wheel-1" alt="wheel">
             </div>
           </div>
           <div id="ongoing-text-box">
-            <p class="ongoing-events">You must travel 500 miles reach the goal.<br>Click 'continue' to travel 10 miles per day.<br>Click 'rest' to heal your team members.<br>Click 'hunt' to gather more food.<br>All actions spend one day, and each team member eats 5 food per day.</p>
+            <p class="ongoing-events">You must 500x to reach your goal.<br>Click 'continue' to try to 10x per day.<br>Click 'rest' to heal your paid group members.<br>Click 'airdrop' to gather more tendies.<br>All actions spend one day, and each group member eats 5 tendies per day.</p>
           </div>
-          <p id="progress-title">Journey progress:</p>
+          <p id="progress-title">Portfolio progress:</p>
           <div id="progressbar"></div>
         </div>
         <div class="col-md-4">
           <div id="sacrifice-button">
-            <img id="sacrifice" src="img/skull.png" alt="Sacrifice Team">
-            <p class="tooltiptext">Clicking on this button will sacrifice your entire team. You will be reincarnated back at the start of the trail.</p>
+            <img id="sacrifice" src="img/skull.png" alt="Sacrifice Group">
+            <p class="tooltiptext">Clicking on this button will delete your paid group's discord. You will start fresh with a new account.</p>
           </div>
-          <h2>Team Conditions</h2>
+          <h2>Group Conditions</h2>
           <div class="prettyColumn" id="status-panel">
             <p class="bold">Days elapsed: <span class="current-date">0</span></p>
             <p class="bold">Distance traveled: <span class="distance-traveled">0</span></p>
@@ -197,22 +197,22 @@
             </ul>
             <div class="row" id="supplies">
               <div class="col-md-4">
-                <img src="img/restaurant.png" alt="food">
-                <p class="bold"> Food left <br><span id="wagon-food-remaining"></span></p>
+                <img src="img/restaurant.png" alt="tendies">
+                <p class="bold"> tendies left <br><span id="paidgroup-tendies-remaining"></span></p>
               </div>
               <div class="col-md-4">
-                <img src="img/bullet.png" alt="bullets">
-                <p class="bold"> Bullets left <br><span id="wagon-bullets-remaining"></span></p>
+                <img src="img/bitcoin.png" alt="bitcoin">
+                <p class="bold"> bitcoin left <br><span id="paidgroup-bitcoin-remaining"></span></p>
               </div>
               <div class="col-md-4">
                 <img src="img/money-bag.png" alt="money">
-                <p class="bold"> Money left <br><span class="wagon-money-remaining"></span></p>
+                <p class="bold"> Money left <br><span class="paidgroup-money-remaining"></span></p>
               </div>
             </div>
           </div>
           <span id="rest-button" class="btn btn-info">Rest</span>
           <span id="continue-button" class="btn btn-success">Continue</span>
-          <span id="hunt-button" class="btn btn-danger">Hunt</span>
+          <span id="airdrop-button" class="btn btn-danger">Airdrop</span>
         </div>
       </div>
     </div>

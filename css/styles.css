@@ -13,25 +13,25 @@ span {
   display: none;
 }
 
-#store {
+#exchange {
   display: none;
 }
 
 #gameMainScreen {
   display: none;
 }
-#wagon-6,
-#wagon-5,
-#wagon-4,
-#wagon-3,
-#wagon-2 {
+#paidgroup-6,
+#paidgroup-5,
+#paidgroup-4,
+#paidgroup-3,
+#paidgroup-2 {
   display: none;
   margin-top: 36px;
   position: absolute;
   z-index: 1;
 }
 
-#wagon-1 {
+#paidgroup-1 {
   position: absolute;
   margin-top: 36px;
   z-index: 1;
@@ -72,7 +72,7 @@ span {
   margin-left: 15px;
 }
 
-#wagon-images .col-md-2 {
+#paidgroup-images .col-md-2 {
   padding: 0px 5px;
 }
 
@@ -107,19 +107,19 @@ span {
   min-height: 665px;
 }
 
-.store-titles {
+.exchange-titles {
   height: 53px;
 }
 
-.store-titles h2{
+.exchange-titles h2{
   float: left;
 }
 
-.store-titles h3 {
+.exchange-titles h3 {
   float: right;
 }
 
-#wagon-images {
+#paidgroup-images {
   background-image: url(../img/mountains.png);
   background-size: cover;
   background-position: bottom;
@@ -173,17 +173,17 @@ span {
   100%   {left:5%; bottom:50%; transform:rotate(0deg); background-image: url(../img/beans.png);}
 }
 
-.icon-wagon {
+.icon-paidgroup {
   width: 120px;
   height: 103px;
   position: absolute;
   bottom: 24%;
   left: 5%;
-  background-image: url(../img/wagon.png);
+  background-image: url(../img/paidgroup.png);
   background-size: cover;
-  animation: wagonwheel 40s linear 0s infinite reverse;
-  -moz-animation: 40s linear 0s reverse none infinite wagonwheel;
-  -webkit-animation: wagonwheel 40s linear 0s infinite reverse;
+  animation: paidgroupwheel 40s linear 0s infinite reverse;
+  -moz-animation: 40s linear 0s reverse none infinite paidgroupwheel;
+  -webkit-animation: paidgroupwheel 40s linear 0s infinite reverse;
 }
 
 #start {
@@ -196,14 +196,14 @@ span {
 }
 
 /* Safari 4.0 - 8.0 */
-@-webkit-keyframes wagonwheel {
+@-webkit-keyframes paidgroupwheel {
   0%   {left:5%;}
   50% {left:85%;}
   100% {left:5%;}
 }
 
 /* Standard syntax */
-@keyframes wagonwheel {
+@keyframes paidgroupwheel {
   0%   {left:5%;}
   50% {left:85%;}
   100% {left:5%;}
@@ -333,7 +333,7 @@ img {
   font-weight: normal;
 }
 
- #store {
+ #exchange {
   background-image: url(../img/merc.png);
   background-size: cover;
   background-position: center;
@@ -341,7 +341,7 @@ img {
   position: relative;
  }
 
- #store .store-fields {
+ #exchange .exchange-fields {
   background: white;
   padding: 25px;
   position: absolute;
@@ -354,12 +354,12 @@ img {
   border-right: 0;
 }
 
-#upper-store-fields .col-md-3 {
+#upper-exchange-fields .col-md-3 {
   text-align: right;
 }
 
-#food-fields .col-md-3,
-#bullet-fields .col-md-3 {
+#tendies-fields .col-md-3,
+#bitcoin-fields .col-md-3 {
   border: 1px solid black;
   text-align: right;
   line-height: 41px;
@@ -367,32 +367,32 @@ img {
   font-weight: 300;
 }
 
-#food-fields .col-md-3:first-of-type,
-#bullet-fields .col-md-3:first-of-type {
+#tendies-fields .col-md-3:first-of-type,
+#bitcoin-fields .col-md-3:first-of-type {
   padding: 0px;
 }
 
-#store input {
+#exchange input {
   width: 100%;
   height: 41px;
   text-align: right;
   padding-right: 10px;
 }
 
-#store p {
+#exchange p {
   margin: 0px;
 }
 
-#storeBTN {
+#exchangeBTN {
   margin: 10px 0;
 }
 
-#store .row  {
+#exchange .row  {
   margin-right: 0;
   margin-left: 0;
 }
 
-.store-total  {
+.exchange-total  {
   float: right;
   margin-right: 10px;
   font-size: 20px;
@@ -614,7 +614,7 @@ img {
   height: 3em;
 }
 
-.health-bar {
+.positivity-bar {
   height: 9px;
   margin-bottom: 6px;
 }
